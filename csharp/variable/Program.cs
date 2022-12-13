@@ -30,7 +30,7 @@ namespace variable
     {
         int age = 30; // 4 바이트
         float height = 170.5f; // 4 바이트
-        double weight = 73.8; // 8 바이트
+        double weight = 73.4; // 8 바이트
         bool rest = false; // 1 바이트
         char gender = 'M'; // 2 바이트
         string name = "choyzuniski"; // n * 2 바이트 + 1 바이트 (null)
