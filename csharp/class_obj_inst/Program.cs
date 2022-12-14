@@ -7,14 +7,22 @@ namespace class_obj_inst
         static void Main(string[] args)
         {
             human choy = new human();
+            // L 밸류 : 휴먼 클래스 타입의 참조 지역 변수
+            // R 밸류 : 휴면 객체 생성 후 반환된 객체 참조
 
+            // class : 객체 타입
+            // object : 객체 - class 타입으로 메모리 공간을 확보한 것
+
+            // instance :
+            // 객체 ( 데이터가 할당된 경우 )
+            // instance 는 object 에 포함되는 관계이다
+
+            // 멤버접근연산자 .
             choy.sayage();
             choy.sayheight();
             choy.sayname();
 
-            int classsage = 3148;
-
-            choy.getage(classsage);
+            choy.getage(37);
             choy.sayage();
         }
     }
