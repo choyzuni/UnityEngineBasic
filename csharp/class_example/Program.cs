@@ -28,7 +28,7 @@ class human
 {
     private int age;
     private float height;
-    private string gender = "";
+    private string gender;
 
     public human()
     {
