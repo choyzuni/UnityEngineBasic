@@ -52,87 +52,87 @@ namespace horse_racing
             {
                 if (goalpos <= totaldistance)
                 {
-                    Console.WriteLine($"\t{name}  〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 ||  " + "Finished !!");
+                    Console.WriteLine($"\n\t{name}  〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 ||  Finished !!");
                 }
                 else if (190 <= totaldistance)
                 {
-                    Console.WriteLine($"\t{name}  〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓▶ ||  " + totaldistance);
+                    Console.WriteLine($"\n\t{name}  〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓▶ ||  {totaldistance}");
                 }
                 else if (180 <= totaldistance)
                 {
-                    Console.WriteLine($"\t{name}  〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓▶〓 ||  " + totaldistance);
+                    Console.WriteLine($"\n\t{name}  〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓▶〓 ||  {totaldistance}");
                 }
                 else if (170 <= totaldistance)
                 {
-                    Console.WriteLine($"\t{name}  〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓▶〓〓 ||  " + totaldistance);
+                    Console.WriteLine($"\n\t{name}  〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓▶〓〓 ||  {totaldistance}");
                 }
                 else if (160 <= totaldistance)
                 {
-                    Console.WriteLine($"\t{name}  〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓▶〓〓〓 ||  " + totaldistance);
+                    Console.WriteLine($"\n\t{name}  〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓▶〓〓〓 ||  {totaldistance}");
                 }
                 else if (150 <= totaldistance)
                 {
-                    Console.WriteLine($"\t{name}  〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓▶〓〓〓〓 ||  " + totaldistance);
+                    Console.WriteLine($"\n\t{name}  〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓▶〓〓〓〓 ||  {totaldistance}");
                 }
                 else if (140 <= totaldistance)
                 {
-                    Console.WriteLine($"\t{name}  〓〓〓〓〓〓〓〓〓〓〓〓〓〓▶〓〓〓〓〓 ||  " + totaldistance);
+                    Console.WriteLine($"\n\t{name}  〓〓〓〓〓〓〓〓〓〓〓〓〓〓▶〓〓〓〓〓 ||  {totaldistance}");
                 }
                 else if (130 <= totaldistance)
                 {
-                    Console.WriteLine($"\t{name}  〓〓〓〓〓〓〓〓〓〓〓〓〓▶〓〓〓〓〓〓 ||  " + totaldistance);
+                    Console.WriteLine($"\n\t{name}  〓〓〓〓〓〓〓〓〓〓〓〓〓▶〓〓〓〓〓〓 ||  {totaldistance}");
                 }
                 else if (120 <= totaldistance)
                 {
-                    Console.WriteLine($"\t{name}  〓〓〓〓〓〓〓〓〓〓〓〓▶〓〓〓〓〓〓〓 ||  " + totaldistance);
+                    Console.WriteLine($"\n\t{name}  〓〓〓〓〓〓〓〓〓〓〓〓▶〓〓〓〓〓〓〓 ||  {totaldistance}");
                 }
                 else if (110 <= totaldistance)
                 {
-                    Console.WriteLine($"\t{name}  〓〓〓〓〓〓〓〓〓〓〓▶〓〓〓〓〓〓〓〓 ||  " + totaldistance);
+                    Console.WriteLine($"\n\t{name}  〓〓〓〓〓〓〓〓〓〓〓▶〓〓〓〓〓〓〓〓 ||  {totaldistance}");
                 }
                 else if (100 <= totaldistance)
                 {
-                    Console.WriteLine($"\t{name}  〓〓〓〓〓〓〓〓〓〓▶〓〓〓〓〓〓〓〓〓 ||  " + totaldistance);
+                    Console.WriteLine($"\n\t{name}  〓〓〓〓〓〓〓〓〓〓▶〓〓〓〓〓〓〓〓〓 ||  {totaldistance}");
                 }
                 else if (90 <= totaldistance)
                 {
-                    Console.WriteLine($"\t{name}  〓〓〓〓〓〓〓〓〓▶〓〓〓〓〓〓〓〓〓〓 ||  " + totaldistance);
+                    Console.WriteLine($"\n\t{name}  〓〓〓〓〓〓〓〓〓▶〓〓〓〓〓〓〓〓〓〓 ||  {totaldistance}");
                 }
                 else if (80 <= totaldistance)
                 {
-                    Console.WriteLine($"\t{name}  〓〓〓〓〓〓〓〓▶〓〓〓〓〓〓〓〓〓〓〓 ||  " + totaldistance);
+                    Console.WriteLine($"\n\t{name}  〓〓〓〓〓〓〓〓▶〓〓〓〓〓〓〓〓〓〓〓 ||  {totaldistance}");
                 }
                 else if (70 <= totaldistance)
                 {
-                    Console.WriteLine($"\t{name}  〓〓〓〓〓〓〓▶〓〓〓〓〓〓〓〓〓〓〓〓 ||  " + totaldistance);
+                    Console.WriteLine($"\n\t{name}  〓〓〓〓〓〓〓▶〓〓〓〓〓〓〓〓〓〓〓〓 ||  {totaldistance}");
                 }
                 else if (60 <= totaldistance)
                 {
-                    Console.WriteLine($"\t{name}  〓〓〓〓〓〓▶〓〓〓〓〓〓〓〓〓〓〓〓〓 ||  " + totaldistance);
+                    Console.WriteLine($"\n\t{name}  〓〓〓〓〓〓▶〓〓〓〓〓〓〓〓〓〓〓〓〓 ||  {totaldistance}");
                 }
                 else if (50 <= totaldistance)
                 {
-                    Console.WriteLine($"\t{name}  〓〓〓〓〓▶〓〓〓〓〓〓〓〓〓〓〓〓〓〓 ||  " + totaldistance);
+                    Console.WriteLine($"\n\t{name}  〓〓〓〓〓▶〓〓〓〓〓〓〓〓〓〓〓〓〓〓 ||  {totaldistance}");
                 }
                 else if (40 <= totaldistance)
                 {
-                    Console.WriteLine($"\t{name}  〓〓〓〓▶〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 ||  " + totaldistance);
+                    Console.WriteLine($"\n\t{name}  〓〓〓〓▶〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 ||  {totaldistance}");
                 }
                 else if (30 <= totaldistance)
                 {
-                    Console.WriteLine($"\t{name}  〓〓〓▶〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 ||  " + totaldistance);
+                    Console.WriteLine($"\n\t{name}  〓〓〓▶〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 ||  {totaldistance}");
                 }
                 else if (20 <= totaldistance)
                 {
-                    Console.WriteLine($"\t{name}  〓〓▶〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 ||  " + totaldistance);
+                    Console.WriteLine($"\n\t{name}  〓〓▶〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 ||  {totaldistance}");
                 }
                 else if (10 <= totaldistance)
                 {
-                    Console.WriteLine($"\t{name}  〓▶〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 ||  " + totaldistance);
+                    Console.WriteLine($"\n\t{name}  〓▶〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 ||  {totaldistance}");
                 }
                 else if (0 <= totaldistance)
                 {
-                    Console.WriteLine($"\t{name}  ▶〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 ||  " + totaldistance);
+                    Console.WriteLine($"\n\t{name}  ▶〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 ||  {totaldistance}");
                 }
             }
         }
@@ -146,23 +146,14 @@ namespace horse_racing
 
         static void gamerank()
         {
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine("\n\n");
             Console.WriteLine("\t\t\t경기 종료!!!");
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine("\t\t     ★★★★★  1등 : " + strings[0]);
-            Console.WriteLine();
-            Console.WriteLine("\t\t      ★★★★  2등 : " + strings[1]);
-            Console.WriteLine();
-            Console.WriteLine("\t\t       ★★★  3등 : " + strings[2]);
-            Console.WriteLine();
-            Console.WriteLine("\t\t        ★★  4등 : " + strings[3]);
-            Console.WriteLine();
-            Console.WriteLine("\t\t         ★  5등 : " + strings[4]);
-            Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine("\n");
+            Console.WriteLine($"\t\t     ★★★★★  1등 :  {strings[0]}\n");
+            Console.WriteLine($"\t\t      ★★★★  2등 :  {strings[1]}\n");
+            Console.WriteLine($"\t\t       ★★★  3등 :  {strings[2]}\n");
+            Console.WriteLine($"\t\t        ★★  4등 :  {strings[3]}\n");
+            Console.WriteLine($"\t\t         ★  5등 :  {strings[4]}\n\n\n");
         }
 
         static void Main(string[] args)
@@ -175,7 +166,6 @@ namespace horse_racing
             {
                 horses[ti] = new horse();
                 horses[ti].name = $"{ti + 1}번마";
-                Console.WriteLine();
                 horses[ti].display();
             }
 
@@ -191,7 +181,6 @@ namespace horse_racing
                 {
                     int tpspeed = random.Next(minspeed, maxspeed + 1);
                     horses[ti].run(tpspeed);
-                    Console.WriteLine();
                     horses[ti].display();
                 }
 
