@@ -24,6 +24,15 @@ namespace array2d
                 map[my, mx] = 0;
             }
 
+            public void resetdisplay()
+            {
+                reset();
+
+                Console.WriteLine();
+                Console.WriteLine("막힌 길입니다.");
+                Console.WriteLine();
+            }
+
             public int getpos()
             {
                 return map[my, mx];
@@ -31,6 +40,9 @@ namespace array2d
 
             public void setpos(int tx, int ty)
             {
+                // map[my, mx] = map_0[my, mx]; // 이전 위치 롤백
+                // 이런식으로도 이전 위치 롤백이 가능함
+
                 mx = tx;
                 my = ty;
 
@@ -39,8 +51,6 @@ namespace array2d
                 Console.Clear();
 
                 display();
-
-
 
                 Console.WriteLine();
 
@@ -52,18 +62,16 @@ namespace array2d
                 // 움직이면 맵의 경계를 벗어나는지 체크
                 if (my >= map.GetLength(0) - 1)
                 {
-                    Console.WriteLine();
-                    Console.WriteLine("막힌 길입니다.");
-                    Console.WriteLine();
+                    resetdisplay();
+
                     return;
                 }
 
                 // 지나갈 수 없는 벽인지 체크
                 if (map[my + 1, mx] == 1)
                 {
-                    Console.WriteLine();
-                    Console.WriteLine("막힌 길입니다.");
-                    Console.WriteLine();
+                    resetdisplay();
+
                     return;
                 }
 
@@ -73,20 +81,18 @@ namespace array2d
             public void moveup()
             {
                 // 움직이면 맵의 경계를 벗어나는지 체크
-                if (my <= map.GetLength(0) - 5)
+                if (my <= map.GetLength(0) - map.GetLength(0))
                 {
-                    Console.WriteLine();
-                    Console.WriteLine("막힌 길입니다.");
-                    Console.WriteLine();
+                    resetdisplay();
+
                     return;
                 }
 
                 // 지나갈 수 없는 벽인지 체크
                 if (map[my - 1, mx] == 1)
                 {
-                    Console.WriteLine();
-                    Console.WriteLine("막힌 길입니다.");
-                    Console.WriteLine();
+                    resetdisplay();
+
                     return;
                 }
 
@@ -98,18 +104,16 @@ namespace array2d
                 // 움직이면 맵의 경계를 벗어나는지 체크
                 if (mx >= map.GetLength(1) - 1)
                 {
-                    Console.WriteLine();
-                    Console.WriteLine("막힌 길입니다.");
-                    Console.WriteLine();
+                    resetdisplay();
+
                     return;
                 }
 
                 // 지나갈 수 없는 벽인지 체크
                 if (map[my, mx + 1] == 1)
                 {
-                    Console.WriteLine();
-                    Console.WriteLine("막힌 길입니다.");
-                    Console.WriteLine();
+                    resetdisplay();
+
                     return;
                 }
 
@@ -119,20 +123,18 @@ namespace array2d
             public void movelt()
             {
                 // 움직이면 맵의 경계를 벗어나는지 체크
-                if (mx <= map.GetLength(1) - 5)
+                if (mx <= map.GetLength(1) - map.GetLength(1))
                 {
-                    Console.WriteLine();
-                    Console.WriteLine("막힌 길입니다.");
-                    Console.WriteLine();
+                    resetdisplay();
+
                     return;
                 }
 
                 // 지나갈 수 없는 벽인지 체크
                 if (map[my , mx - 1] == 1)
                 {
-                    Console.WriteLine();
-                    Console.WriteLine("막힌 길입니다.");
-                    Console.WriteLine();
+                    resetdisplay();
+
                     return;
                 }
 
@@ -143,10 +145,6 @@ namespace array2d
         // 2차원 배열
         static int[,] map = new int[5, 5]
             {
-                // 0 : 열린 길이고
-                // 1 : 막힌 길
-                // 2 : 도착 지점
-                // 5 : 플레이어
                 { 0,1,1,1,1 },
                 { 0,1,1,1,1 },
                 { 0,0,0,1,1 },
@@ -154,14 +152,24 @@ namespace array2d
                 { 1,1,0,0,2 },
             };
 
+        //static int[,] map_0 = new int[5, 5]
+        //{
+        //        { 0,1,1,1,1 },
+        //        { 0,1,1,1,1 },
+        //        { 0,0,0,1,1 },
+        //        { 1,1,0,1,1 },
+        //        { 1,1,0,0,2 },
+        //};
+
         static void Main(string[] args)
         {
             player player = new player();
             player.setpos(0, 0);
 
+            string tc = string.Empty;
             while (true)
             {
-                string tc = Console.ReadLine();
+                tc = Console.ReadLine();
 
                 if (tc == "a")
                 {
@@ -179,12 +187,9 @@ namespace array2d
                 {
                     player.movedown();
                 }
-                else if (tc == "r")
-                {
-                    player.reset();
-                }
                 else
                 {
+                    player.reset();
                     Console.WriteLine();
                     Console.WriteLine("사용할 수 없는 키입니다.");
                     Console.WriteLine();

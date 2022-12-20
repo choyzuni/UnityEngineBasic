@@ -21,7 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "array", "array\array.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "loop_statements", "loop_statements\loop_statements.csproj", "{485D9B95-22CD-482E-A09D-1397946DFE2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "array2d", "array2d\array2d.csproj", "{E2ED44AB-82B8-4CE7-A68C-DE9B714ED52F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "array2d", "array2d\array2d.csproj", "{E2ED44AB-82B8-4CE7-A68C-DE9B714ED52F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "enum_switch_case", "enum_switch_case\enum_switch_case.csproj", "{2AB71837-CD16-4660-B108-43671E61C585}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "horse_racing", "horse_racing\horse_racing.csproj", "{2AFA702E-7BD7-4D95-B899-F5D0741EB34A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +73,14 @@ Global
 		{E2ED44AB-82B8-4CE7-A68C-DE9B714ED52F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2ED44AB-82B8-4CE7-A68C-DE9B714ED52F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2ED44AB-82B8-4CE7-A68C-DE9B714ED52F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AB71837-CD16-4660-B108-43671E61C585}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AB71837-CD16-4660-B108-43671E61C585}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AB71837-CD16-4660-B108-43671E61C585}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AB71837-CD16-4660-B108-43671E61C585}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AFA702E-7BD7-4D95-B899-F5D0741EB34A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AFA702E-7BD7-4D95-B899-F5D0741EB34A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AFA702E-7BD7-4D95-B899-F5D0741EB34A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AFA702E-7BD7-4D95-B899-F5D0741EB34A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
