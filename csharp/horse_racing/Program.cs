@@ -322,7 +322,7 @@ namespace horse_racing
 
                     batts.battend();
 
-                    if (batts.getmoney() == 0)
+                    if (batts.getmoney() < 500)
                     {
                         Console.WriteLine("\t남은 금액이 없으므로 더 이상 게임을 진행할 수 없습니다.\n\n");
                         return;
