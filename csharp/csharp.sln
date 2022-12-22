@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "enum_switch_case", "enum_sw
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "horse_racing", "horse_racing\horse_racing.csproj", "{2AFA702E-7BD7-4D95-B899-F5D0741EB34A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "structure", "structure\structure.csproj", "{06447262-45A8-4263-9EBD-5C42DDE3759E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "structure", "structure\structure.csproj", "{06447262-45A8-4263-9EBD-5C42DDE3759E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "inheritance", "inheritance\inheritance.csproj", "{06FD4BF4-32EF-45E2-8991-ED25A93E5B06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,10 @@ Global
 		{06447262-45A8-4263-9EBD-5C42DDE3759E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06447262-45A8-4263-9EBD-5C42DDE3759E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06447262-45A8-4263-9EBD-5C42DDE3759E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06FD4BF4-32EF-45E2-8991-ED25A93E5B06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06FD4BF4-32EF-45E2-8991-ED25A93E5B06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06FD4BF4-32EF-45E2-8991-ED25A93E5B06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06FD4BF4-32EF-45E2-8991-ED25A93E5B06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
