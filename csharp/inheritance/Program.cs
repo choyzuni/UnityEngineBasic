@@ -54,7 +54,7 @@ namespace inheritance
                 iatks[ti].atk();
             }
 
-
+            
 
         }
     }
