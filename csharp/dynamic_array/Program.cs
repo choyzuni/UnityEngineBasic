@@ -14,9 +14,20 @@ namespace dynamic_array
             da.add(1);
             Console.WriteLine(da[0]);
 
+            Console.WriteLine(da.length() ); 
+
             da.find(biggerthan20);
             
+            dynamic_arr<double> da_double = new dynamic_arr<double>();
 
+            da_double.add(3.5);
+            Console.WriteLine(da_double[0]);
+
+            Console.WriteLine(da_double.length());
+
+            da_double.add(0.5);
+            Console.WriteLine(da_double[1]);
+            Console.WriteLine(da_double.length());
         }
 
         public static bool biggerthan20(int value)

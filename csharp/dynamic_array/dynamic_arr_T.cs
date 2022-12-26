@@ -6,21 +6,27 @@ using System.Threading.Tasks;
 
 namespace dynamic_array
 {
-    internal class dynamic_arr
+
+    // generic ( 일반화 )
+    // 자료형을 일반화 하는 문법
+    // 클래스, 구조체, 인터페이스, 함수 등의 이름 뒤에 붙어서 정해지지 않은 타입에 대한
+    // 일반식을 정의할 때 사용한다
+
+    internal class dynamic_arr<T>
     {
         // snake_case
         // UPPER_SNAKE_CASE
 
         // const : 상수 키워드
         // const 키워드가 붙은 변수는 초기화만 가능하며 상수처럼 사용된다
-        private const int default_size = 1;
-        private int[] data = new int[default_size];
+        private const int default_size = 1; // 배열의 크기는 정수형이기 때문에 이건 T로 바꾸면 안됨~
+        private T[] data = new T[default_size];
 
         private int count;
 
         private int capacity { get { return data.Length; } }
 
-        public int this[int index]
+        public T this[int index]
         {
             get { return data[index]; }
             set { data[index] = value; }
@@ -29,11 +35,11 @@ namespace dynamic_array
         // 삽입 알고리즘
         // 일반적으로 O(1)
         // 단, capacity 가 모자랄때는 O(n)
-        public void add(int item)
+        public void add(T item)
         {
             if (count >= capacity)
             {
-                int[] tmp = new int[(int)Math.Ceiling(Math.Log10(capacity)) + 1];
+                T[] tmp = new T[(int)Math.Ceiling(Math.Log10(capacity)) + 1];
 
                 for (int i = 0; i < count; i++)
                 {
@@ -48,12 +54,12 @@ namespace dynamic_array
 
         // 탐색 알고리즘
         // 시간복잡도 : O(n)
-        public bool contains(int target)
+        public bool contains(T target)
         {
 
             for (int i = 0; i < count; i++)
             {
-                if (data[i] == target)
+                if (Comparer<T>.Default.Compare(data[i], target) == 0)
                 {
                     return true;
                 }
@@ -63,7 +69,7 @@ namespace dynamic_array
 
         // 탐색 알고리즘
         // O(n)
-        public int find(Predicate<int> match)
+        public T find(Predicate<T> match)
         {
             for (int i = 0; i < count; i++)
             {
@@ -74,17 +80,17 @@ namespace dynamic_array
             }
             // default 키워드
             // 해당 타입의 고정값을 반환하는 키워드
-            return default(int);
+            return default(T);
         }
 
         // 삭제 알고리즘
         // O(n)
-        public bool remove(int item)
+        public bool remove(T item)
         {
             int index = -1;
             for (int i = 0; i < count; i++)
             {
-                if (data[i] == item)
+                if (Comparer<T>.Default.Compare(data[i], item) == 0)
                 {
                     index = i;
                     break;
@@ -123,7 +129,7 @@ namespace dynamic_array
 
             for (int i = 0; i < capacity; i++)
             {
-                data[i] = default(int);
+                data[i] = default(T);
             }
         }
 

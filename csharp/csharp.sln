@@ -31,7 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "structure", "structure\stru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "inheritance", "inheritance\inheritance.csproj", "{06FD4BF4-32EF-45E2-8991-ED25A93E5B06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dynamic_array", "dynamic_array\dynamic_array.csproj", "{4FFF4045-B7BD-4610-AF17-AED316A750A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dynamic_array", "dynamic_array\dynamic_array.csproj", "{4FFF4045-B7BD-4610-AF17-AED316A750A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "linked_list", "linked_list\linked_list.csproj", "{515DA295-0438-4836-BAF3-EC1B1C469A75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{4FFF4045-B7BD-4610-AF17-AED316A750A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FFF4045-B7BD-4610-AF17-AED316A750A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FFF4045-B7BD-4610-AF17-AED316A750A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{515DA295-0438-4836-BAF3-EC1B1C469A75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{515DA295-0438-4836-BAF3-EC1B1C469A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{515DA295-0438-4836-BAF3-EC1B1C469A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{515DA295-0438-4836-BAF3-EC1B1C469A75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
