@@ -131,11 +131,23 @@ namespace linked_list
             {
                 node<T> fnode2 = new node<T>(value);
 
-                fnode2.next = fnode.next;
-                fnode.next.prev = fnode2;
+                if (fnode == last)
+                {
+                    fnode.next = fnode2;
+                    fnode2.next = null;
 
-                fnode2.prev = fnode;
-                fnode.next = fnode2;
+                    fnode2.prev = fnode;
+
+                    last = fnode2;
+                }
+                else
+                {
+                    fnode2.next = fnode.next;
+                    fnode.next.prev = fnode2;
+
+                    fnode2.prev = fnode;
+                    fnode.next = fnode2;
+                }
             }
         }
 
@@ -147,11 +159,23 @@ namespace linked_list
             {
                 node<T> fnode2 = new node<T>(value);
 
-                fnode2.prev = fnode.prev;
-                fnode.prev.next = fnode2;
+                if (fnode == first)
+                {
+                    fnode2.prev = null;
+                    fnode.prev = fnode2;
 
-                fnode2.next = fnode;
-                fnode.prev = fnode2;
+                    fnode2.next = fnode;
+
+                    first = fnode2;
+                }
+                else
+                {
+                    fnode2.prev = fnode.prev;
+                    fnode.prev.next = fnode2;
+
+                    fnode2.next = fnode;
+                    fnode.prev = fnode2;
+                }
             }
         }
 

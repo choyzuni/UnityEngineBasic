@@ -31,9 +31,13 @@ namespace linked_list
 
             Console.WriteLine("---------------------");
 
-            tlist.addbefore(20, 25);
+            tlist.addafter(10, 5);
 
-            tlist.addafter(20, 15);
+            tlist.addbefore(10, 15);
+
+            tlist.addafter(60, 55);
+
+            tlist.addbefore(60, 65);
 
             tlist.display();
 
