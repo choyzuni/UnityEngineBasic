@@ -155,7 +155,7 @@ namespace linked_list
         {
             node<T> fnode = find(findvalue);
 
-            if (fnode != null)
+            if (fnode != null)  // if (comparer<T>.default.compare(fnode.value, value) == 0) 로도 사용 가능
             {
                 node<T> fnode2 = new node<T>(value);
 
@@ -223,13 +223,24 @@ namespace linked_list
                 {
                     fnode.prev.next = fnode.next;
                 }
+                else
+                {
+                    first = fnode.next;
+                }
 
                 if (fnode.next != null)
                 {
                     fnode.next.prev = fnode.prev;
                 }
+                else
+                {
+                    last = fnode.prev;
+                }
 
-                // 기존 tmp1 를 안 지워도 쓰레기 수집가가 알아서 가져가는지?
+                //fnode.next = null;
+                //fnode.prev = null;
+                //fnode = null;
+                // 지역변수이므로 알아서 null 값이 할당된다
 
                 return true;
             }
@@ -247,13 +258,24 @@ namespace linked_list
                 {
                     fnode.prev.next = fnode.next;
                 }
+                else
+                {
+                    first = fnode.next;
+                }
 
                 if (fnode.next != null)
                 {
                     fnode.next.prev = fnode.prev;
                 }
+                else
+                {
+                    last = fnode.prev;
+                }
 
-                // 기존 tmp1 를 안 지워도 쓰레기 수집가가 알아서 가져가는지?
+                //fnode.next = null;
+                //fnode.prev = null;
+                //fnode = null;
+                // 지역변수이므로 알아서 null 값이 할당된다
 
                 return true;
             }

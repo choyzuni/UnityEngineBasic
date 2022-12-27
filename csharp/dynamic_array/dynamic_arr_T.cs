@@ -39,7 +39,7 @@ namespace dynamic_array
         {
             if (count >= capacity)
             {
-                T[] tmp = new T[(int)Math.Ceiling(Math.Log10(capacity)) + 1];
+                T[] tmp = new T[(int)Math.Ceiling(Math.Log10(capacity)) + 2];
 
                 for (int i = 0; i < count; i++)
                 {

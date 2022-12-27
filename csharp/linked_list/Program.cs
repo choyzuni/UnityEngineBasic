@@ -42,6 +42,18 @@ namespace linked_list
             tlist.display();
 
             Console.WriteLine("---------------------");
+
+            tlist.remove(5);
+            tlist.remove(10);
+            tlist.remove(15);
+            tlist.remove(20);
+            tlist.remove(50);
+            tlist.remove(55);
+            tlist.remove(60);
+            tlist.remove(65);
+
+            tlist.display();
         }
+
     }
 }
