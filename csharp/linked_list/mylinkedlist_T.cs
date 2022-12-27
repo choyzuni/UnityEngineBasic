@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.FileIO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,26 @@ namespace linked_list
         {
             value = tvalue;
         }
+
+        public static bool operator ==(node<T> _1, T _2)
+        {
+            if (Equals(_1.value, _2))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool operator !=(node<T> _1, T _2)
+        {
+            if (Equals(_1.value, _2))
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 
     internal class mylinkedlist<T>
@@ -24,7 +45,6 @@ namespace linked_list
         public node<T> last_p => last;
 
         private node<T> first, last, tmp1, tmp2;
-
 
         public int count
         {
@@ -83,39 +103,138 @@ namespace linked_list
         }
 
         public void display() // 순차적으로 출력
-        { 
-        
-        }
-
-        public void addbefore(node<T> node, T value) // 특정 노드 뒤에
-        { 
-        
-        }
-
-        public void addafter(node<T> node, T value) // 특정 노드 앞에
         {
+            if (first == null)
+            {
+                Console.WriteLine("아무것도 추가되지 않았습니다");
+                return;
+            }
 
+            node<T> dis = first;
+
+            while (dis != null)
+            {
+                Console.WriteLine(dis.value);
+
+                dis = dis.next;
+            }
+
+            Console.WriteLine($"노드의 갯수는 {count} 개 입니다.");
         }
 
-        public node<T> find(int value) // 찾기
+        // public void addbefore(node<T> node, T value) // 특정 노드 뒤에
+        public void addbefore(T findvalue,T value) // 특정 노드 뒤에
         {
-            return null;
+            node<T> fnode = find(findvalue);
+
+            if (fnode != null)
+            {
+                node<T> fnode2 = new node<T>(value);
+
+                fnode2.next = fnode.next;
+                fnode.next.prev = fnode2;
+
+                fnode2.prev = fnode;
+                fnode.next = fnode2;
+            }
         }
 
-        public node<T> findlast(int value) // 뒤에서부터 찾기
+        public void addafter(T findvalue, T value) // 특정 노드 앞에
         {
-            return null;
+            node<T> fnode = find(findvalue);
+
+            if (fnode != null)
+            {
+                node<T> fnode2 = new node<T>(value);
+
+                fnode2.prev = fnode.prev;
+                fnode.prev.next = fnode2;
+
+                fnode2.next = fnode;
+                fnode.prev = fnode2;
+            }
         }
 
-        public bool remove(int value) // 지우기
+        public node<T> find(T value) // 찾기
         {
+            node<T> fnode = first;
+
+            while (fnode != value && fnode != last)
+            {
+                fnode = fnode.next;
+            }
+
+            if (fnode != value && fnode == last)
+            {
+                return null;
+            }
+
+            return fnode;
+        }
+
+        public node<T> findlast(T value) // 뒤에서부터 찾기
+        {
+            node<T> fnode = last;
+
+            while (fnode != value && fnode != first)
+            {
+                fnode = fnode.prev;
+            }
+
+            if (fnode != value && fnode == first)
+            {
+                return null;
+            }
+
+            return fnode;
+        }
+
+        public bool remove(T value) // 지우기
+        {
+            node<T> fnode = find(value);
+
+            if (fnode != null)
+            {
+                if (fnode.prev != null)
+                {
+                    fnode.prev.next = fnode.next;
+                }
+
+                if (fnode.next != null)
+                {
+                    fnode.next.prev = fnode.prev;
+                }
+
+                // 기존 tmp1 를 안 지워도 쓰레기 수집가가 알아서 가져가는지?
+
+                return true;
+            }
+
             return false;
         }
 
-        public bool removelast(int value) // 뒤에서부터 지우기
+        public bool removelast(T value) // 뒤에서부터 지우기
         {
+            node<T> fnode = findlast(value);
+
+            if (fnode != null)
+            {
+                if (fnode.prev != null)
+                {
+                    fnode.prev.next = fnode.next;
+                }
+
+                if (fnode.next != null)
+                {
+                    fnode.next.prev = fnode.prev;
+                }
+
+                // 기존 tmp1 를 안 지워도 쓰레기 수집가가 알아서 가져가는지?
+
+                return true;
+            }
+
             return false;
         }
-
     }
 }
