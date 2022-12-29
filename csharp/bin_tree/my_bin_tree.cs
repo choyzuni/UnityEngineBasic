@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace bin_tree
 {
@@ -20,7 +21,7 @@ namespace bin_tree
 
     internal class my_bin_tree<T>
     {
-        private node<T> root, tmp1, tmp2;
+        private node<T> root, tmp1, tmp2, tmp3, tmp4;
 
         public void add(T item)
         {
@@ -142,6 +143,8 @@ namespace bin_tree
         // 더이상 왼쪽이 없더라도 오른쪽이 있으면 또 오른쪽으로 가서 가장 왼쪽 리프를 탐색하는 것을 반복한 후
         // 마지막으로 찾은 리프 노드를 원래 삭제하려던 노드의 오른쪽 자식 위치에다가 놓고
         // 원래 삭제하려던 노드의 오른쪽 자식 노드는 원래 삭제하려던 노드 위치에다가 놓는다
+
+        /*
         public bool remove(T item)
         {
             node<T> rpnode = findparent(item);
@@ -245,6 +248,163 @@ namespace bin_tree
                 }
                 return true;
             }
+        }
+        */
+
+        public bool remove(T item)
+        {
+            if (root == null)
+            {
+                return false;
+            }
+
+            bool succ = false;
+
+            tmp1 = root; // 탐색 노드
+            tmp2 = root; // 현재 탐색 노드의 부모 노드
+
+            int dir = 0; // 1 : rt, -1 : lt
+
+            // 삭제하고자 하는 노드 탐색
+            while (tmp1 != null)
+            {
+                // 내가 찾으려는 노드값이 현재 탐색 노드값보다 작은지
+                if (Comparer<T>.Default.Compare(item, tmp1.value) < 0)
+                {
+                    tmp2 = tmp1;
+                    tmp1 = tmp1.lt;
+                    dir = -1;
+                }
+                // 내가 찾으려는 노드값이 현재 탐색 노드값보다 큰지
+                else if (Comparer<T>.Default.Compare(item, tmp1.value) > 0)
+                {
+                    tmp2 = tmp1;
+                    tmp1 = tmp1.rt;
+                    dir = 1;
+                }
+                else
+                {
+                    succ= true;
+                    break;
+                }
+            }
+
+            if (succ == true)
+            {
+                if (tmp1.lt == null && tmp1.rt == null) // 무자식
+                {
+                    if (dir < 0)
+                    {
+                        tmp2.lt = null;
+                    }
+                    else if (dir > 0)
+                    {
+                        tmp2.rt = null;
+                    }
+                    else
+                    {
+                        throw new Exception($"잘못된 자식입니다");
+                    }
+                    tmp1 = null;
+                }
+                else if (tmp1.lt != null && tmp1.rt == null) // 왼쪽 자식만 있는 경우
+                {
+                    if (dir < 0)
+                    {
+                        tmp2.lt = tmp1.lt;
+                    }
+                    else if (dir > 0)
+                    {
+                        tmp2.rt = tmp1.lt;
+                    }
+                    else
+                    {
+                        throw new Exception($"잘못된 자식입니다");
+                    }
+                    tmp1 = null;
+                }
+                else if (tmp1.lt == null && tmp1.rt != null) // 오른쪽 자식만 있는 경우
+                {
+                    if (dir < 0)
+                    {
+                        tmp2.lt = tmp1.rt;
+                    }
+                    else if (dir > 0)
+                    {
+                        tmp2.rt = tmp1.rt;
+                    }
+                    else
+                    {
+                        throw new Exception($"잘못된 자식입니다");
+                    }
+                    tmp1 = null;
+                }
+                else // 자식이 둘 다 있을 경우
+                {
+                    tmp3 = tmp1; // 리프노드 찾는거 ( tmp1 을 대체할 수 있는 리프 노드 )
+
+                    bool done = true;
+
+                    while (tmp3.rt != null)
+                    {
+                        tmp4 = tmp3;
+                        tmp3 = tmp3.rt;
+
+                        while (tmp3.lt != null)
+                        {
+                            tmp4 = tmp3;
+                            tmp3 = tmp3.lt;
+                            done = false;
+                        }
+
+                        if (done)
+                        {
+                            break;
+                        }
+                    }
+
+                    // tmp1 자리에 tmp3 대체
+                    if (dir < 0)
+                    {
+                        tmp2.lt = tmp3;
+                    }
+                    else if (dir > 0)
+                    {
+                        tmp2.rt = tmp3;
+                    }
+                    else
+                    {
+                        throw new Exception($"잘못된 자식입니다");
+                    }
+
+                    // 기존 tmp1 의 자식들을 tmp3 의 자식으로 연결함
+                    tmp3.lt = tmp1.lt;
+
+                    if (tmp1.rt != tmp3)
+                    {
+                        tmp3.rt = tmp1.rt;
+                    }
+
+                    // 대체할 리프노드와 그 부모의 연결을 끊음
+                    if (Comparer<T>.Default.Compare(tmp3.value, tmp4.value) < 0)
+                    {
+                        tmp4.lt = null;
+                    }
+                    else if (Comparer<T>.Default.Compare(tmp3.value, tmp4.value) > 0)
+                    {
+                        tmp4.rt = null;
+                    }
+                    else
+                    {
+                        throw new Exception($"잘못된 자식입니다");
+                    }
+
+                    tmp1 = tmp2 = tmp3 = tmp4 = null;
+                }
+            }
+
+            return succ;
+
         }
 
         public void InorderTravers(node<T> rootnode)
