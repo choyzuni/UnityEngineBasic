@@ -28,6 +28,16 @@ namespace dynamic_array
             da_double.add(0.5);
             Console.WriteLine(da_double[1]);
             Console.WriteLine(da_double.length());
+
+            dynamic_arr<double>.dynamicarr_enum<double> enumerator = da_double.GetEnumerator();
+
+            while (enumerator.movenext())
+            {
+                Console.WriteLine(enumerator.current);
+            }
+            enumerator.reset();
+
+
         }
 
         public static bool biggerthan20(int value)

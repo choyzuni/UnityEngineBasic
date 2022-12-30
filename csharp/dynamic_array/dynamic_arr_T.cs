@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -39,7 +40,7 @@ namespace dynamic_array
         {
             if (count >= capacity)
             {
-                T[] tmp = new T[(int)Math.Ceiling(Math.Log10(capacity)) + 2];
+                T[] tmp = new T[(int)Math.Ceiling(Math.Log10(capacity)) + 1 + default_size];
 
                 for (int i = 0; i < count; i++)
                 {
@@ -132,6 +133,44 @@ namespace dynamic_array
                 data[i] = default(T);
             }
         }
+
+        public dynamicarr_enum<T> GetEnumerator()
+        {
+            return new dynamicarr_enum<T>(data);
+        }
+
+        // 열거자의 핵심
+        // current - 열거된 자료구조에서 현재 가리키고 있는 자료 아이템
+        // move next - 현재에서 그 다음 아이템을 가리키도록 하는 함수
+        // reset - 가리키는 인덱스를 초기화하는 함수
+        public struct dynamicarr_enum<K>
+        {
+            public K current { get { return data[index]; } }
+
+            private readonly K[] data;
+
+            private int index;
+
+
+            public dynamicarr_enum(K[] origin)
+            {
+                data = origin;
+                index = -1;
+            }
+
+            public bool movenext()
+            {
+                index++;
+
+                return (index >= 0) && (index < data.Length);
+            }
+
+            public void reset()
+            {
+                index = -1;
+            }
+        }
+
 
 
 

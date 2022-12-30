@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace linked_list
 {
@@ -281,6 +283,67 @@ namespace linked_list
             }
 
             return false;
+        }
+
+
+        public linkedlist_enum<T> GetEnum()
+        {
+            return new linkedlist_enum<T>(first_p);
+        }
+
+
+        public struct linkedlist_enum<K>
+        {
+            public K current { get { return data.value; } }
+
+            private node<K> data;
+            private node<K> _first;
+
+            private bool firstflag;
+
+            private bool FirstFlag
+            {
+                get
+                {
+                    return firstflag;
+                }
+                set
+                {
+                    if (value)
+                    {
+                        data = _first;
+                    }
+
+                    FirstFlag = value;
+                }
+            }
+            
+            public linkedlist_enum(node<K> first)
+            {
+                _first = first;
+                data = null;
+                firstflag = false;
+            }
+
+            public bool movenext()
+            {
+                if (firstflag == false)
+                {
+                    firstflag = true;
+                }
+                else
+                {
+                    data = data.next;
+                }
+
+                return data != null;
+            }
+
+            public void reset()
+            {
+                data = null;
+                firstflag = false;
+            }
         }
     }
 }

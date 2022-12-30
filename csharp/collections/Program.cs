@@ -64,11 +64,26 @@ namespace collections
             // 제네릭 해쉬 테이블
             Dictionary<int, string> pairs= new Dictionary<int, string>();
 
-            pairs.Add(18, "아 준나게 지루하다");
+            pairs.Add(18, "지루하다");
+            pairs.Add(19, "아 지루하다");
+            pairs.Add(20, "아 준나 지루하다");
+            pairs.Add(21, "아 준나게 지루하다");
+            pairs.Add(22, "아 준나게 지루하다~");
 
-            string name = pairs[18];
 
-            Console.WriteLine(name);
+            // foreach 문
+            // IEnumerable 을 iterating 하기 위한 구문
+            // IEnumerable 의 모든 아이템들을 중복 없이 순회하는 구문
+            foreach (KeyValuePair<int, string> item in pairs)
+            {
+                Console.Write(item.Key);
+                Console.Write("  ");
+                Console.WriteLine(item.Value);
+            }
+
+
+
+
 
         }
     }
