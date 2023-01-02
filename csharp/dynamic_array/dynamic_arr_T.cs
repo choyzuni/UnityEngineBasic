@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
@@ -13,7 +14,7 @@ namespace dynamic_array
     // 클래스, 구조체, 인터페이스, 함수 등의 이름 뒤에 붙어서 정해지지 않은 타입에 대한
     // 일반식을 정의할 때 사용한다
 
-    internal class dynamic_arr<T>
+    internal class dynamic_arr<T> : IEnumerable<T>
     {
         // snake_case
         // UPPER_SNAKE_CASE
@@ -169,6 +170,9 @@ namespace dynamic_array
             {
                 index = -1;
             }
+
+            // IDispose
+            // 관리되지 않는 힙영역의 메모리를 해제하는 내용을 구현하는 함수
         }
 
 
@@ -178,6 +182,16 @@ namespace dynamic_array
         public string length()
         {
             return $"배열의 크기는 {data.Length}개입니다.";
+        }
+
+        IEnumerator<T> IEnumerable<T>.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
         }
     }
 }

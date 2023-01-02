@@ -285,64 +285,59 @@ namespace linked_list
             return false;
         }
 
-
-        public linkedlist_enum<T> GetEnum()
+        public MyLinkedListEnum<T> GetEnumerator()
         {
-            return new linkedlist_enum<T>(first_p);
+            return new MyLinkedListEnum<T>(first_p);
         }
 
-
-        public struct linkedlist_enum<K>
+        public struct MyLinkedListEnum<K>
         {
-            public K current { get { return data.value; } }
-
-            private node<K> data;
+            public K Current
+            {
+                get
+                {
+                    return _currentNode.value;
+                }
+            }
+            private node<K> _currentNode;
             private node<K> _first;
-
-            private bool firstflag;
-
+            private bool _firstFlag;
             private bool FirstFlag
             {
                 get
                 {
-                    return firstflag;
+                    return _firstFlag;
                 }
                 set
                 {
                     if (value)
-                    {
-                        data = _first;
-                    }
+                        _currentNode = _first;
 
-                    FirstFlag = value;
+                    _firstFlag = value;
                 }
             }
-            
-            public linkedlist_enum(node<K> first)
+
+            public MyLinkedListEnum(node<K> first)
             {
                 _first = first;
-                data = null;
-                firstflag = false;
+                _currentNode = null;
+                _firstFlag = false;
             }
 
-            public bool movenext()
+            public bool MoveNext()
             {
-                if (firstflag == false)
-                {
-                    firstflag = true;
-                }
+                if (_firstFlag == false)
+                    FirstFlag = true;
                 else
-                {
-                    data = data.next;
-                }
+                    _currentNode = _currentNode.next;
 
-                return data != null;
+                return _currentNode != null;
             }
 
-            public void reset()
+            public void Reset()
             {
-                data = null;
-                firstflag = false;
+                _currentNode = null;
+                FirstFlag = false;
             }
         }
     }

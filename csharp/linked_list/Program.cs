@@ -15,13 +15,14 @@ namespace linked_list
             tlist.addfirst(10);
             tlist.addlast(60);
 
-            mylinkedlist<int>.linkedlist_enum<int> enumerator = tlist.GetEnum();
+            mylinkedlist<int>.MyLinkedListEnum<int> enumerator = tlist.GetEnumerator();
 
-            while (enumerator.movenext())
+            while (enumerator.MoveNext())
             {
-                Console.WriteLine(enumerator.current);
+                Console.WriteLine(enumerator.Current);
             }
-            enumerator.reset();
+
+            enumerator.Reset();
         }
 
     }
