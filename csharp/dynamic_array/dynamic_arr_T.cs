@@ -135,18 +135,27 @@ namespace dynamic_array
             }
         }
 
-        public dynamicarr_enum<T> GetEnumerator()
+        public IEnumerator<T> GetEnumerator()
         {
             return new dynamicarr_enum<T>(data);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
 
         // 열거자의 핵심
         // current - 열거된 자료구조에서 현재 가리키고 있는 자료 아이템
         // move next - 현재에서 그 다음 아이템을 가리키도록 하는 함수
         // reset - 가리키는 인덱스를 초기화하는 함수
-        public struct dynamicarr_enum<K>
+        public struct dynamicarr_enum<K> : IEnumerator<K>
         {
             public K current { get { return data[index]; } }
+
+            public K Current => throw new NotImplementedException();
+
+            object IEnumerator.Current => throw new NotImplementedException();
 
             private readonly K[] data;
 
@@ -171,27 +180,24 @@ namespace dynamic_array
                 index = -1;
             }
 
+            public bool MoveNext()
+            {
+                throw new NotImplementedException();
+            }
+
+            public void Reset()
+            {
+                throw new NotImplementedException();
+            }
+
+            public void Dispose()
+            {
+                throw new NotImplementedException();
+            }
+
             // IDispose
             // 관리되지 않는 힙영역의 메모리를 해제하는 내용을 구현하는 함수
         }
 
-
-
-
-
-        public string length()
-        {
-            return $"배열의 크기는 {data.Length}개입니다.";
-        }
-
-        IEnumerator<T> IEnumerable<T>.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

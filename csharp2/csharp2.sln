@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp2", "csharp2\csharp2.csproj", "{EFF5F51E-805B-4640-B3F5-0139CC6C0902}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sort_Algorithms", "Sort_Algorithms\Sort_Algorithms.csproj", "{B83B3C99-B6C3-4EF3-840F-1877A9DFAF40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFF5F51E-805B-4640-B3F5-0139CC6C0902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFF5F51E-805B-4640-B3F5-0139CC6C0902}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFF5F51E-805B-4640-B3F5-0139CC6C0902}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFF5F51E-805B-4640-B3F5-0139CC6C0902}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B83B3C99-B6C3-4EF3-840F-1877A9DFAF40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B83B3C99-B6C3-4EF3-840F-1877A9DFAF40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B83B3C99-B6C3-4EF3-840F-1877A9DFAF40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B83B3C99-B6C3-4EF3-840F-1877A9DFAF40}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75780831-32C2-427A-A424-CA76E4CC9DE9}
+	EndGlobalSection
+EndGlobal

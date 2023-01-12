@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace dynamic_array
 {
@@ -21,13 +22,6 @@ namespace dynamic_array
             dynamic_arr<double> da_double = new dynamic_arr<double>();
 
             da_double.add(3.5);
-            Console.WriteLine(da_double[0]);
-
-            Console.WriteLine(da_double.length());
-
-            da_double.add(0.5);
-            Console.WriteLine(da_double[1]);
-            Console.WriteLine(da_double.length());
 
             dynamic_arr<double>.dynamicarr_enum<double> enumerator = da_double.GetEnumerator();
 
@@ -36,7 +30,15 @@ namespace dynamic_array
                 Console.WriteLine(enumerator.current);
             }
             enumerator.reset();
+            enumerator.Dispose();
 
+            // using : Dispose() 호출을 보장하는 구문
+            using (IEnumerator<int> enumerator_int = new dynamic_arr<int>.GetEnumerator())
+            {
+                while (enumerator_int.MoveNext()) ;
+                Console.WriteLine(enumerator_int.Current);
+                enumerator.reset();
+            }
 
         }
 
