@@ -12,7 +12,11 @@ namespace Sort_Algorithms
 
             // Sort_Algorithms.SelectionSort(arr);
 
-            Sort_Algorithms.InsertionSort(arr);
+            // Sort_Algorithms.InsertionSort(arr);
+
+            // Sort_Algorithms.MergeSort(arr);
+
+            Sort_Algorithms.QuickSort(arr);
 
             for (int i = 0; i < arr.Length; i++)
             {
