@@ -16,7 +16,9 @@ namespace Sort_Algorithms
 
             // Sort_Algorithms.MergeSort(arr);
 
-            Sort_Algorithms.QuickSort(arr);
+            // Sort_Algorithms.QuickSort(arr);
+
+            Sort_Algorithms.HeapSort(arr);
 
             for (int i = 0; i < arr.Length; i++)
             {
