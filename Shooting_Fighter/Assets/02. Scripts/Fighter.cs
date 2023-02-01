@@ -13,7 +13,7 @@ public class Fighter : MonoBehaviour
         }
         set
         {
-            if (value < 0)
+            if (value <= 0)
             {
                 Destroy(gameObject);
             }

@@ -5,14 +5,15 @@ using UnityEngine;
 /// <summary>
 /// 앞으로 나아가다가 트리거 되면 자체 소멸
 /// </summary>
-public class Bullet : MonoBehaviour
+public class Bomb : MonoBehaviour
 {
-    [SerializeField] private float _speed = 10;
+    [SerializeField] private float _speed = 6.0f;
     private Vector3 _dir = Vector3.forward;
     private Transform _tr;
     [SerializeField] private LayerMask _enemyMask;
-    [SerializeField] private int _damage = 20;
-    [SerializeField] private ParticleSystem _Explosion;
+    [SerializeField] private int _damage = 50;
+    [SerializeField] private float _range = 2.5f;
+    [SerializeField] private ParticleSystem _effect;
 
 
     // ==========================================
@@ -34,11 +35,16 @@ public class Bullet : MonoBehaviour
     {
         if (((1 << other.gameObject.layer) & _enemyMask) > 0)
         {
-            ParticleSystem effect = Instantiate(_Explosion, _tr.position, Quaternion.Euler(Vector3.up * 180.0f));
-            Destroy(effect.gameObject, _Explosion.main.duration +
-                _Explosion.main.startLifetime.constantMax);
+            ParticleSystem effect = Instantiate(_effect, _tr.position, Quaternion.identity);
+            Destroy(effect.gameObject, _effect.main.duration +
+                _effect.main.startLifetime.constantMax);
 
-            other.GetComponent<Enemy>().hp -= _damage;
+            foreach (Collider enemy in Physics.OverlapSphere(_tr.position, _range, _enemyMask))
+            {
+                enemy.GetComponent<Enemy>().hp -= _damage;
+                //(int)(1.0f - Vector3.Distance(_tr.position,
+                //    enemy.transform.position / _range)) * _damage;
+            }
         }
 
         Destroy(gameObject);

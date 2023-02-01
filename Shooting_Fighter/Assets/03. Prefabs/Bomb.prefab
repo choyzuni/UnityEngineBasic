@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b35e26418bcd75b43abc882bbf39f7bd, type: 2}
+  - {fileID: 2100000, guid: 9b950c3b343680049877766cfbecc355, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,9 +93,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3365548917772826970}
   - component: {fileID: 3365548917772826971}
-  - component: {fileID: 3365548917772826968}
+  - component: {fileID: 7757053651848176654}
   m_Layer: 15
-  m_Name: Bullet
+  m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,8 +110,8 @@ Transform:
   m_GameObject: {fileID: 3365548917772826969}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.57, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3365548916693437044}
   m_Father: {fileID: 0}
@@ -131,7 +131,7 @@ CapsuleCollider:
   m_Height: 0.6
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3365548917772826968
+--- !u!114 &7757053651848176654
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,12 +140,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3365548917772826969}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87542513a2fc2714ab92a473147871ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 62110a96c7290cc4eb97a481441b6bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  _speed: 5
   _enemyMask:
     serializedVersion: 2
     m_Bits: 1048576
-  _damage: 20
-  _Explosion: {fileID: 7245923006371810744, guid: 19e01335992392742bdf0de1072bd680, type: 3}
+  _damage: 100
+  _range: 3
+  _effect: {fileID: 1860167262112168573, guid: cfedb1435c5e063408adc8aa4b6bbb48, type: 3}

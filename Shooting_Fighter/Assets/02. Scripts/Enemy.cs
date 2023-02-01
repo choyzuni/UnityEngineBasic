@@ -13,8 +13,9 @@ public class Enemy : MonoBehaviour
         }
         set
         {
-            if (value < 0)
+            if (value <= 0)
             {
+                Score.instance.score += _Score;
                 Destroy(gameObject);
             }
 
@@ -28,6 +29,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Slider _hpSlider;
     [SerializeField] private int _damage = 10;
     [SerializeField] private LayerMask _playerMask;
+    [SerializeField] private LayerMask _boundaryMask;
+    [SerializeField] private int _Score;
+
 
     private void Awake()
     {
@@ -39,6 +43,11 @@ public class Enemy : MonoBehaviour
         if (((1 << other.gameObject.layer) & _playerMask) > 0)
         {
             other.GetComponent<Fighter>().hp -= _damage;
+            Destroy(gameObject);
+        }
+
+        if (((1 << other.gameObject.layer) & _boundaryMask) > 0)
+        {
             Destroy(gameObject);
         }
     }
