@@ -337,6 +337,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   _Score: 20
+  _bombItemPrefab: {fileID: 1739794696231247803, guid: c848fb83bc9108b4891328928bbad5b1, type: 3}
+  _itemDropPercent: 50
 --- !u!1 &5941913712480718669
 GameObject:
   m_ObjectHideFlags: 0

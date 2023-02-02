@@ -42,8 +42,8 @@ public class Bomb : MonoBehaviour
             foreach (Collider enemy in Physics.OverlapSphere(_tr.position, _range, _enemyMask))
             {
                 enemy.GetComponent<Enemy>().hp -= _damage;
-                //(int)(1.0f - Vector3.Distance(_tr.position,
-                //    enemy.transform.position / _range)) * _damage;
+                //(int)((1.0f - Vector3.Distance(_tr.position,
+                //    enemy.transform.position) / _range) * _damage);
             }
         }
 

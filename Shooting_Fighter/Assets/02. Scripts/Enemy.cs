@@ -16,6 +16,11 @@ public class Enemy : MonoBehaviour
             if (value <= 0)
             {
                 Score.instance.score += _Score;
+                if (Random.Range(0.0f, 100.0f) < _itemDropPercent)
+                {
+                    Instantiate(_bombItemPrefab, transform.position, Quaternion.identity);
+                }
+
                 Destroy(gameObject);
             }
 
@@ -31,6 +36,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private LayerMask _playerMask;
     [SerializeField] private LayerMask _boundaryMask;
     [SerializeField] private int _Score;
+    [SerializeField] private GameObject _bombItemPrefab;
+    [Range(0.0f, 100.0f)]
+    [SerializeField] private float _itemDropPercent = 50.0f;
 
 
     private void Awake()
@@ -51,6 +59,4 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
 }
